@@ -1,4 +1,4 @@
-**Storyteller**
+**Node App**
 
 Basic React/Express boilerplate.
 
