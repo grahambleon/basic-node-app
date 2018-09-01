@@ -10,20 +10,8 @@ class App extends Component {
 
   componentDidMount() {
     fetch('/api/hello')
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-          error = new Error(errorMessage);
-        throw(error);
-      }
-    })
     .then(response => response.json())
-    .then(body => {
-      this.setState({ text: body.text });
-    })
-    .catch(error => console.error (`Error in fetch: ${error.message}`));
+    .then(body => this.setState({ text: body.text }));
   }
 
   render() {
